@@ -1,0 +1,25 @@
+<project>
+    
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    
+    <target name="compile">
+        <mkdir dir="bin"/>
+        <javac srcdir="src" destdir="bin"/>
+    </target>
+    
+    <target name="jar">
+        <mkdir dir="bin/jar"/>
+        <jar destfile="bin/jar/FileParser.jar" basedir="bin">
+            <manifest>
+                <attribute name="Main-Class" value="ma.dosi06.test.Exemple"/>
+            </manifest>
+        </jar>
+    </target>
+    
+    <target name="run">
+        <java jar="bin/jar/FileParser.jar" fork="true"/>
+    </target>
+    
+</project>
